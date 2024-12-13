@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/styles/functions.css" />
+  <link rel="stylesheet" href="./src/styles/global.css" />
+  <link rel="stylesheet" href="./src/styles/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="wfull hfull flex justify-center align-center items-center">
+  <form class="login-form flex flex-column gap12 border1 p16">
+    <input type="email" name="login" placeholder="E-mail" autofocus required autocomplete="email" class="secondary" />
+    <input type="password" name="password" placeholder="Password" required minlength="6" maxlength="10"
+      autocomplete="current-password" />
+    <div class="flex justify-between">
+      <button type="submit" class="flex items-center primary" id="login">
+        Login
+        <span class="material-symbols-outlined ml4"> login </span>
+      </button>
+      <button type="submit" class="flex items-center accent" id="signup">
+        Sign-up
+        <span class="material-symbols-outlined ml4"> person_add </span>
+      </button>
+    </div>
+  </form>
+</body>
+<script src="./src/utilities/elementsFactory.js"></script>
+<script src="./src/services/user.js"></script>
+<script src="./src/pages/login.js"></script>
+
+</html>

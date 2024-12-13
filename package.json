@@ -1,0 +1,13 @@
+{
+  "name": "crmi-front",
+  "description": "MVP For fullstack-basic sprint.",
+  "authors": "ommeirelles@gmail.com",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "devDependencies": {
+    "prettier": "3.4.2"
+  },
+  "scripts": {
+    "prettier": "prettier . --write"
+  }
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./src/styles/functions.css" />
+  <link rel="stylesheet" href="./src/styles/global.css" />
+  <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+
+<body class="grid">
+  <div class="header flex px16 justify-between items-center">
+    <div class="header__user flex items-center">
+      <span class="material-symbols-outlined mr8"> account_circle </span>
+      <p id="user-name">User</p>
+    </div>
+    <div class="header__actions flex cgap16">
+      <select class="header__actions-language neutral">
+        <option value="PT">Portugues</option>
+        <option value="EN">Ingles</option>
+        <option value="FR">Frances</option>
+      </select>
+      <button type="button" class="header__actions-language__add flex items-center">
+        <span class="material-symbols-outlined" title="Adicionar linguagem"> add </span>
+      </button>
+      <button type="button" class="flex items-center" onclick="logout()">
+        Sair
+        <span class="material-symbols-outlined ml8"> logout </span>
+      </button>
+    </div>
+  </div>
+  <dialog class="create-namespace dialog">
+    <form class="create-namespace__namespace-form dialog__form" action="">
+      <h1 class="create-namespace__namespace-form__header dialog__form__header">
+        Adicionar
+      </h1>
+      <div class="flex flex-column cgap16 my16">
+        <label for="namespace" class="text-light mb8">Namespace:*</label>
+        <input type="text" class="create-namespace__namespace-form__input" name="namespace" placeholder="valor"
+          autofocus />
+      </div>
+      <button class="create-namespace__namespace-form__submit accent self-end" type="submit">
+        <span class="create-namespace__namespace-form__submit-icon material-symbols-outlined mr8">
+          add
+        </span>
+        Salvar
+      </button>
+    </form>
+  </dialog>
+  <dialog class="create-language dialog">
+    <form class="create-language__form dialog__form" action="">
+      <h1 class="create-language__form__header dialog__form__header">
+        Adicionar
+      </h1>
+      <div class="flex flex-column cgap16 my16">
+        <label for="language-name" class="text-light mb8">Nome:*</label>
+        <input type="text" class="create-language__form__input-name" name="language-name" placeholder="nome"
+          id="language-name" autofocus minlength="1" required />
+      </div>
+      <div class="flex flex-column cgap16 my16">
+        <label for="language-code" class="text-light mb8">Codigo:*</label>
+        <input type="text" class="create-language__form__input-code" name="language-code" id="language-code"
+          placeholder="PT | FR | EN " maxlength="5" minlength="1" required />
+      </div>
+      <button class="create-language__form__submit accent self-end" type="submit">
+        <span class="create-language__form__submit-icon material-symbols-outlined mr8">
+          add
+        </span>
+        Salvar
+      </button>
+    </form>
+  </dialog>
+  <div class="namespace-select flex cgap16 justify-center my16">
+    <div class="flex flex-column">
+      <label for="namespaces" class="text-lighter mb8">Selecione o namespace:</label>
+      <select name="namespaces" id="namespaces" class="namespace-select__input accent">
+        <option value="main">main</option>
+        <option value="main">main2</option>
+      </select>
+    </div>
+    <button class="namespace-select__create self-end" type="submit">
+      <span class="material-symbols-outlined mr8">
+        add
+      </span>
+      Criar
+    </button>
+  </div>
+  <form class="form-content" id="form-content">
+    <div class="form-content__props flex justify-end cgap8 px16">
+      <h1 class="form-content__props__header text-light">Namespace</h1>
+      <button class="form-content__props__action-root py8" type="button">
+        <span class="material-symbols-outlined mr8">
+          data_object
+        </span>
+        Add Root
+      </button>
+      <button class="accent py8" onClick="closeAll()" type="button">
+        <span class="material-symbols-outlined mr8">
+          collapse_content
+        </span>
+        Fechar
+      </button>
+      <button class="accent py8" onClick="openAll()" type="button">
+        <span class="material-symbols-outlined mr8">
+          expand_all
+        </span>
+        Abrir
+      </button>
+    </div>
+    <div class="form-content__all-entries"></div>
+  </form>
+  <footer class="footer">
+    <button class="accent self-end" type="submit" form="form-content">
+      <span class="material-symbols-outlined mr8">
+        save
+      </span>
+      Salvar
+    </button>
+  </footer>
+</body>
+<script src="./src/utilities/utils.js"></script>
+<script src="./src/utilities/elementsFactory.js"></script>
+<script src="./src/services/namespace.js"></script>
+<script src="./src/services/language.js"></script>
+<script src="./src/pages/main.js"></script>
+
+</html>
