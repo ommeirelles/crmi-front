@@ -196,7 +196,7 @@
 
     const possibleLanguages = await languageService.getLanguages()
     if (possibleLanguages.length < 1) {
-      const newLanguage = languageService.createLanguage("PT", "Portugues")
+      const newLanguage = await languageService.createLanguage("PT", "Portugues")
       if (newLanguage) possibleLanguages.push(newLanguage)
     }
 
