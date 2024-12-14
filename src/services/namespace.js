@@ -28,7 +28,7 @@ class NamespaceService {
     createNamespace(name, language) {
         try {
             /** @type {{id: number, name: string, language_id: number}} */
-            return fetch(`${this.#endpoint}language/${language}/namespace`, {
+            return fetch(`${this.#endpoint}/language/${language}/namespace`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

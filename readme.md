@@ -1,6 +1,6 @@
 # MVP 
 
-App estatico sem utilizacão de dependencias feito para projeto de MVP do curso de pós graduacão PUC-RIO
+App estatico sem utilizacão de dependencias feito para projeto de MVP do curso de pós graduacão em engenharia de software PUC-RIO
 
 # Como rodar?
 
