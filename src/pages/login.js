@@ -1,6 +1,8 @@
 (function main(params) {
   document.querySelector(".login-form")?.addEventListener("submit", onFormSubmit);
-  const userService = new UserService("http://127.0.0.1:5000")
+  const configService = new Config();
+  const userService = new UserService(configService.env.endpoint);
+
   /**
    * @param {SubmitEvent} ev
    */

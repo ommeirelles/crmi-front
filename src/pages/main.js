@@ -12,8 +12,9 @@
   /**
    * Services
    */
-  const namespaceService = new NamespaceService("http://127.0.0.1:5000")
-  const languageService = new LanguageService("http://127.0.0.1:5000")
+  const configService = new Config()
+  const namespaceService = new NamespaceService(configService.env.endpoint)
+  const languageService = new LanguageService(configService.env.endpoint)
 
   /**
    * Language
