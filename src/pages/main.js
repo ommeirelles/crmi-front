@@ -115,7 +115,7 @@
   }
 
   async function update(data) {
-    document.querySelector(".form-content__props__header").innerText = currentNamespace.toUpperCase()
+    document.querySelector(".form-content__props__header").innerText = currentNamespace?.toUpperCase() ?? ""
     if (!data) data = await getNamespaceData()
     const root = document.querySelector(".form-content__all-entries");
     root.innerHTML = "";
